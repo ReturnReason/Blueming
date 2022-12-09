@@ -1,20 +1,15 @@
 import styled from 'styled-components';
-import { Button, TextInput, Label } from './index';
 
-export default function Form() {
+export default function Form({ children }) {
   const submitHandler = (e) => {
     e.preventDefault();
   };
 
-  return (
-    <FormBox onSubmit={submitHandler}>
-      <Label />
-      <TextInput placeholder={'사용할 아이디를 입력해주세요.'} />
-      <Button text={'중복 확인'} />
-    </FormBox>
-  );
+  return <FormBox onSubmit={submitHandler}>{children}</FormBox>;
 }
 
 const FormBox = styled.form`
   display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
