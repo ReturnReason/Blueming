@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 import { PRIMARY_COLOR, WHITE_COLOR } from 'components/colors/common';
 
-export default function Button({ text }) {
-  return <Btn>{text}</Btn>;
+export default function Button({ children, bgColor, fontColor }) {
+  return (
+    <Btn bgColor={bgColor} fontColor={fontColor}>
+      {children}
+    </Btn>
+  );
 }
 
 const Btn = styled.button`
   border-radius: 5px;
-  background: ${PRIMARY_COLOR};
+  background: ${({ bgColor }) => bgColor || PRIMARY_COLOR};
   cursor: pointer;
-  color: ${WHITE_COLOR};
+  color: ${({ fontColor }) => fontColor || WHITE_COLOR};
   border: none;
-  padding: 10px;
+  padding: 5px 8px;
 `;
