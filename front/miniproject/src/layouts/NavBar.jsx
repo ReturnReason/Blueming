@@ -1,19 +1,35 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'components/index';
 import { PRIMARY_COLOR, WHITE_COLOR } from 'components/colors/common';
 import styled from 'styled-components';
 
 export default function NavBar() {
+  const navigate = useNavigate();
+
+  const connectRouter = (path) => () => {
+    navigate(path);
+  };
+
   return (
     <Nav>
-      <h1>Symbol</h1>
+      <h1>Blueming</h1>
       <MenuList>
         <li>
-          <Button bgColor={WHITE_COLOR} fontColor={PRIMARY_COLOR}>
+          <Button
+            onClick={connectRouter('/signin')}
+            bgColor={WHITE_COLOR}
+            fontColor={PRIMARY_COLOR}
+          >
             Sign in
           </Button>
         </li>
         <li>
-          <Button bgColor={WHITE_COLOR} fontColor={PRIMARY_COLOR}>
+          <Button
+            onClick={connectRouter('/signup')}
+            bgColor={WHITE_COLOR}
+            fontColor={PRIMARY_COLOR}
+          >
             Sign up
           </Button>
         </li>
