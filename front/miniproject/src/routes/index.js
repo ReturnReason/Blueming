@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { Main } from 'pages/index';
-import SignUp from 'pages/SignUp';
+import { Main, SignUp } from 'pages/index';
 import Layout from 'layouts/Layout';
 
 export default function index() {
