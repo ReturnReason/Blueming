@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  html {
+    position : relative;
+  }
+
   li {
     list-style : none;
   }
