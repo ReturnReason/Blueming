@@ -46,6 +46,8 @@ const Nav = styled.nav`
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
+  position: fixed;
+  z-index: 999;
 
   h1 {
     color: ${WHITE_COLOR};
