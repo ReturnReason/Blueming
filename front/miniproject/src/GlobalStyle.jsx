@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   * {
+    text-decoration : none;
     box-sizing: border-box;
     margin: 0;
     padding : 0;
