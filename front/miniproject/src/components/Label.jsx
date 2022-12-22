@@ -9,6 +9,8 @@ export default function Label({ title, htmlFor, children }) {
   );
 }
 
-const Container = styled.div``;
+const Container = styled.div`
+  margin-top: 5px;
+`;
 
 const LabelBox = styled.label``;

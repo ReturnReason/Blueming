@@ -11,5 +11,6 @@ export default function Form({ children }) {
 const FormBox = styled.form`
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 10px;
 `;

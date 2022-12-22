@@ -13,7 +13,9 @@ export default function NavBar() {
 
   return (
     <Nav>
-      <h1>Blueming</h1>
+      <h1>
+        <a href='/'>Blueming</a>
+      </h1>
       <MenuList>
         <li>
           <Button
@@ -46,10 +48,10 @@ const Nav = styled.nav`
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
-  position: fixed;
+  /* position: fixed; */
   z-index: 999;
 
-  h1 {
+  h1 a {
     color: ${WHITE_COLOR};
   }
 `;
