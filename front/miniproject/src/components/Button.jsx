@@ -1,9 +1,19 @@
 import styled from 'styled-components';
 import { PRIMARY_COLOR, WHITE_COLOR } from 'components/colors/common';
 
-export default function Button({ children, bgColor, fontColor, type, onClick, width, mt }) {
+export default function Button({
+  children,
+  className,
+  bgColor,
+  fontColor,
+  type,
+  onClick,
+  width,
+  mt,
+}) {
   return (
     <Btn
+      className={className}
       mt={mt}
       width={width}
       onClick={onClick}
