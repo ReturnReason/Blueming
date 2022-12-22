@@ -8,7 +8,7 @@ export default function SignUp() {
       <Form>
         <Wrapper>
           <Label title='아이디' htmlFor='id' />
-          <div>
+          <div className='id'>
             <TextInput isRequired name='id' placeholder='아이디를 입력해주세요' />
             <Button>중복 확인</Button>
           </div>
@@ -24,12 +24,13 @@ export default function SignUp() {
 
         <Wrapper>
           <Label title='이메일' htmlFor='email' />
-          <div>
+          <div className='email'>
             <TextInput isRequired name='email' placeholder='이메일을 입력해주세요' />
             <Button>이메일 인증</Button>
           </div>
         </Wrapper>
-        <Button>회원가입</Button>
+
+        <Button className='join'>회원가입</Button>
       </Form>
     </Container>
   );
@@ -38,8 +39,18 @@ export default function SignUp() {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 800px;
-  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  padding: 50px;
+  margin: 0 auto;
+  border: 1px solid #eee;
+  margin-top: 5vh;
+
+  .join {
+    margin-top: 10px;
+    padding: 8px 5px;
+  }
 `;
 
 const Title = styled.h2`
@@ -49,4 +60,23 @@ const Title = styled.h2`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+
+  .id,
+  .email {
+    display: flex;
+    align-items: center;
+  }
+
+  .id input,
+  .email input {
+    flex-grow: 1;
+  }
+
+  .id button,
+  .email button {
+    margin-left: 15px;
+    height: 100%;
+    padding: 8px 10px;
+  }
 `;
