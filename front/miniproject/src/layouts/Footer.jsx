@@ -7,7 +7,4 @@ export default function Footer() {
 const FooterContainer = styled.footer`
   background: #eee;
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 `;
