@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export default function Form({ children }) {
   const submitHandler = (e) => {
     e.preventDefault();
+
+    console.log(e.target);
   };
 
   return <FormBox onSubmit={submitHandler}>{children}</FormBox>;
