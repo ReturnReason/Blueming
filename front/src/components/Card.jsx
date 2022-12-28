@@ -25,7 +25,6 @@ const CardItem = styled.section`
   border-radius: 5px;
   border: 1px solid #ddd;
   background: #fff;
-  margin: 0 0 24px 24px;
 
   .img {
     display: block;
