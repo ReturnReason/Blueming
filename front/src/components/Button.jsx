@@ -10,11 +10,13 @@ export default function Button({
   onClick,
   width,
   mt,
+  mg,
 }) {
   return (
     <Btn
       className={className}
       mt={mt}
+      mg={mg}
       width={width}
       onClick={onClick}
       type={type}
@@ -35,4 +37,5 @@ const Btn = styled.button`
   border: none;
   padding: 5px 8px;
   margin-top: ${({ mt }) => mt};
+  margin: ${({ mg }) => mg};
 `;
