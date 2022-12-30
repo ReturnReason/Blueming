@@ -2,11 +2,11 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
+const port = process.env.PORT;
+const cookieParser = require('cookie-parser');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const port = process.env.PORT;
 
 const mongoose = require('mongoose');
 const { User } = require('./models/User');
@@ -32,5 +32,19 @@ app.post('/signup', (req, res) => {
   user.save((err, userInfo) => {
     if (err) return res.json({ success: false, err });
     return res.status(200).json({ success: true, message: '회원가입 완료!' });
+  });
+});
+
+app.post('/login', (req, res) => {
+  User.findOne({ email: req.body.email }, (err, user) => {
+    if (err) return res.json({ loginSuccess: false, message: '존재하지 않는 이메일입니다.' });
+
+    user.comparePassword(req.body.password, (err, isMatch) => {
+      if (!isMatch) {
+        return res.json({ loginSuccess: false, message: '비밀번호가 일치하지 않습니다.' });
+      }
+
+      //TODO: 비밀번호도 일치하면 토큰 발급하기
+    });
   });
 });
