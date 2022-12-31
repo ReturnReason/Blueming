@@ -12,38 +12,45 @@ export default function NavBar() {
   };
 
   return (
-    <Nav>
-      <h1>
-        <a href='/'>Blueming</a>
-      </h1>
-      <MenuList>
-        <li>
-          <Button
-            onClick={connectRouter('/signin')}
-            bgColor={WHITE_COLOR}
-            fontColor={PRIMARY_COLOR}
-          >
-            Sign in
-          </Button>
-        </li>
-        <li>
-          <Button
-            onClick={connectRouter('/signup')}
-            bgColor={WHITE_COLOR}
-            fontColor={PRIMARY_COLOR}
-          >
-            Sign up
-          </Button>
-        </li>
-      </MenuList>
-    </Nav>
+    <NavContainer>
+      <Nav>
+        <h1>
+          <a href='/'>Blueming</a>
+        </h1>
+        <MenuList>
+          <li>
+            <Button
+              onClick={connectRouter('/signin')}
+              bgColor={WHITE_COLOR}
+              fontColor={PRIMARY_COLOR}
+            >
+              Sign in
+            </Button>
+          </li>
+          <li>
+            <Button
+              onClick={connectRouter('/signup')}
+              bgColor={WHITE_COLOR}
+              fontColor={PRIMARY_COLOR}
+            >
+              Sign up
+            </Button>
+          </li>
+        </MenuList>
+      </Nav>
+    </NavContainer>
   );
 }
 
-const Nav = styled.nav`
+const NavContainer = styled.div`
   width: 100%;
-  height: 46px;
   background-color: ${PRIMARY_COLOR};
+`;
+
+const Nav = styled.nav`
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 46px;
   display: flex;
   align-items: center;
   padding-left: 10%;
