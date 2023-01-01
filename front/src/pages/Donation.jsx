@@ -6,21 +6,43 @@ import { FaWheelchair } from 'react-icons/fa';
 import { RiEarthFill } from 'react-icons/ri';
 import { BsFillPeopleFill } from 'react-icons/bs';
 import { TbOld } from 'react-icons/tb';
+import Card from 'components/Card';
 
 export default function Donation() {
   return (
-    <Container>
-      <CategoryList>
-        {categories.map((category, idx) => {
-          return (
-            <li key={`${category} ${idx}`}>
-              {category?.icon}
-              {category?.topic}
-            </li>
-          );
-        })}
-      </CategoryList>
-    </Container>
+    <div>
+      <HeaderContent>
+        <CategoryList>
+          {categories.map((category, idx) => {
+            return (
+              <li key={`${category} ${idx}`}>
+                {category?.icon}
+                {category?.topic}
+              </li>
+            );
+          })}
+        </CategoryList>
+      </HeaderContent>
+      <BodyContent>
+        <h2>진행중인 모금</h2>
+        <div>
+          <Sort>
+            <input type='radio' name='sort_recommendation' />
+            <label>추천순</label>
+            <input type='radio' name='sort_latest' />
+            <label>최신순</label>
+            <input type='radio' name='sort_impending' />
+            <label>종료 임박순</label>
+          </Sort>
+        </div>
+        <DonationCards>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </DonationCards>
+      </BodyContent>
+    </div>
   );
 }
 
@@ -91,7 +113,7 @@ const categories = [
   },
 ];
 
-const Container = styled.div`
+const HeaderContent = styled.div`
   background: ${SUB_COLOR};
   color: #fff;
 `;
@@ -121,4 +143,32 @@ const CategoryList = styled.ul`
   svg {
     font-size: 25px;
   }
+`;
+
+const BodyContent = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 40px;
+
+  > h2 {
+    align-self: start;
+    margin-bottom: 15px;
+  }
+`;
+
+const DonationCards = styled.div`
+  display: flex;
+  column-gap: 15px;
+`;
+
+const Sort = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 1000px;
+  gap: 5px;
+  margin-bottom: 10px;
 `;
